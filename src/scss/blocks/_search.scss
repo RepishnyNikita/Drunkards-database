@@ -1,0 +1,27 @@
+@use './../base/vars' as *;
+@use './../base/mixine' as*;
+
+.search{
+    margin-bottom: 10px;
+}
+
+.search-btn {
+    padding: 5px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 2px solid $diluted-white;
+    width: 100%;
+    border-radius: 30px;
+    @include mobile{
+        gap: 10px;
+    }
+}
+
+.search-btn__input {
+    flex-grow: 1;
+    &::placeholder{
+        font-weight: 700;
+        font-size: 18px;
+    }
+}

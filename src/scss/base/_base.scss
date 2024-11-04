@@ -1,0 +1,40 @@
+@use './vars' as *;
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: $main-font,sans-serif;
+    background:$main-bg-color;
+    color: $pink;
+}
+
+
+.App{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    color: inherit;
+}
+
+.container{
+    max-width: 1230px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+    &--h4{
+        font-size: 14px;
+        margin: 0;
+        text-align: start;
+    }
+}

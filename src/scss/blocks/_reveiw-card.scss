@@ -1,0 +1,193 @@
+@use './../base/vars' as *;
+@use './../base/mixine' as *;
+
+.rewiew-card {
+    position: relative;
+    border: 2px solid $diluted-white;
+    border-radius: 3px;
+    padding: 5px;
+    display: flex;
+    gap: 20px;
+
+    @include mobileX{
+        padding: 10px 10px 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.review-card textarea,
+.review-card input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.review-card button {
+  margin-right: 10px;
+}
+
+.review-card__details button:last-child {
+  margin-right: 0;
+}
+
+.rewiew-card__img{
+    width: 110px;
+    height: 110px;
+    border-radius: 2px;
+
+    @include mobileX{
+        width: 200px;
+        height: 200px;
+    }
+
+    img{
+        border-radius: 3px;
+        transition: 0.3s ease-in-out;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover{
+        z-index: 1;
+    }
+
+    & img:hover{
+        border-radius: 5px;
+        transform: scale(1.6);
+
+        @include mobileX {
+            transform: none;
+        }
+    }
+}
+
+.rewiew-card__list {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 10px;
+    flex: 1;
+    font-weight: 500;
+
+    @include mobileX{
+        align-self: flex-start;
+    }
+}
+
+.rewiew-card__list-item {
+    // position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img{
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.rewiew-card__list-item-wrap{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.rewiew-card__list-item__title {
+    color: #fff;
+
+    &--wiskey{
+        color: #885646;
+    }
+}
+
+.rewiew-card__list-item__choice {
+    font-weight: 500;
+    color: #A7D696;
+
+    &--no-recomend{
+        color: #ff7474;
+    }
+}
+
+.rewiew-card__list-item__rewiew {
+    position: relative;
+    display: inline-block;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #D9D9D9;
+
+    background: linear-gradient(90deg, $pink 50%, #D9D9D9 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.5s ease-in;
+    background-size: 200% 100%;
+    background-position: 100%;
+
+
+    &:hover{
+        background-position: 0;
+    }
+
+}
+
+
+.rewiew-card__list-item__rewiew-modal{
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease-in;
+
+    position: absolute;
+    padding: 6px;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    color: #D9D9D9;
+    background-color: #603872;
+    border: 2px solid #a37e7e;
+    border-radius: 3px;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+
+    &--active{
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.rewiew-card__details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    color: $diluted-white;
+    font-weight: 500;
+    
+
+    & span:first-child{
+        font-size: 12px;
+        color: $diluted-white;
+    }
+
+    & :last-child{
+        color: #fff;
+        font-size: 14px;
+    }
+
+    button{
+        &:hover{
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+    }
+
+    @include mobileX{
+        gap: 10px;
+    }
+}

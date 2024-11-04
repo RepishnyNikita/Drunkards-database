@@ -1,0 +1,131 @@
+@use '../../../scss/base/vars' as*;
+@use '../../../scss/base/mixine' as*;
+
+.form__fieldset-review {
+    display: flex;
+    align-items: end;
+    gap: 40px;
+    padding: 15px;
+    border-radius: 3px;
+
+    @include tablet{
+        flex-direction: column;
+        align-items: unset;
+        padding: 10px;
+    }
+    @include mobile{
+        flex-direction: column;
+        align-items: unset;
+        padding: 5px;
+        margin-bottom: 30px;
+    }
+}
+
+.form__fieldset-review__icon {
+    display: flex;
+    gap: 20px;
+}
+
+.form__fieldset-review__lable {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+
+    &::after{
+        content: attr(data-tooltip);
+        position: absolute;
+        opacity: 0;
+        bottom: -15px;
+        left: 0;
+        font-size: 12px;
+        text-wrap: nowrap;
+        transition: 0.2s ease-in;
+    }
+
+    &:hover::after{
+       opacity: 1; 
+    }
+}
+
+.form__fieldset-review__input {
+    opacity: 0;
+    position: absolute;
+}
+
+.form__fieldset-review__radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: $diluted-white;
+    border: 1px solid $diluted-white;
+
+    &::before{
+        content: "";
+        position: absolute;
+        display: none;
+        pointer-events: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 3px;
+        z-index: -1;
+        border: 3px solid #7AA76A;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.2s ease-in-out;
+    }
+
+    &--x-mark{
+        &::before{
+            content: "";
+            position: absolute;
+            display: none;
+            pointer-events: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 3px;
+            z-index: -1;
+            border: 3px solid #AA5050;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.2s ease-in-out;
+        }
+    }
+}
+
+.form__fieldset-review__span{
+    color: #7AA76A;
+    font-weight: 600;
+
+    &--red{
+        color: #AA5050;
+    }
+}
+
+.form__fieldset-review__input:checked +
+.form__fieldset-review__radio::before{
+    display: block;
+}
+
+.form__fieldset-review__comment {
+    display: grid;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.form__fieldset-review__comment-input {
+    padding: 10px;
+    border-radius: 10px;
+    border-radius: 10px;
+    border: 2px solid $diluted-white;
+
+    &::placeholder{
+        font-weight: 600;
+    }
+}

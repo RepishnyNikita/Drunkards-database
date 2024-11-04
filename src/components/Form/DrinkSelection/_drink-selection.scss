@@ -1,0 +1,117 @@
+@use '../../../scss/base/vars' as*;
+@use '../../../scss/base/mixine' as*;
+
+.form__fieldset-drink {
+    display: flex;
+    gap: 10px;
+    padding: 20px 10px 10px;
+    border-radius: 3px;
+    border: 2px solid $diluted-white;
+
+    @include tablet{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    @include mobileX{
+        border: unset;
+    }
+    
+    @include mobile{
+        flex-direction: column;
+        padding: 5px;
+    }
+}
+
+.form__fieldset-drink__icon{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width:272px;
+    width: 100%;
+}
+
+.form__fieldset-drink__wrapper{
+    display: flex;
+    gap: 5px;
+    
+}
+
+.form__fieldset-drink__lable{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::after{
+        content: attr(data-tooltip);
+        position: absolute;
+        opacity: 0;
+        font-size: 12px;
+        bottom: -17px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        transition: 0.2s ease-in-out;
+    }
+
+    &:hover::after{
+        opacity: 1;
+    }
+}
+
+.form__fieldset-drink__input{
+    opacity: 0;
+    position: absolute;
+}
+
+.form__fieldset-drink__radio{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: $diluted-white;
+    border: 1px solid $diluted-white;
+
+    img{
+        user-select: none;
+    }
+    
+    &::before{
+        content: "";
+        position: absolute;
+        display: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 3px;
+        z-index: -1;
+        background-color: rgba(167, 214, 150, 0.45);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.form__fieldset-drink__input:checked +
+.form__fieldset-drink__radio::before{
+    display: block;
+}
+
+.form__fieldset-drink__name{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.form__fieldset-drink__name-input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid $diluted-white;
+
+    &::placeholder{
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,103 @@
+@use './../base/vars' as*;
+@use '../base/mixine' as*;
+
+@use '../../components/Form/PhotoUpload/photo-upload';
+@use '../../components/Form/DrinkSelection/drink-selection';
+@use '../../components/Form/ReviewSection/review-section';
+
+.form{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    gap: 10px;
+    padding: 10px;
+    color: $color-text-form;
+
+    @include mobileX{
+        font-size: 14px;
+        gap: 20px;
+    }
+}
+
+
+.form-btn__add{
+    max-width: 400px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
+    line-height: 30px;
+    font-size: 20px;
+    border: 2px solid $diluted-white;
+    transition: 0.2s ease;
+    margin-bottom: 20px;
+    
+    @include mobileX {
+        line-height: unset;
+        font-size: 14px
+    }
+
+    &:hover{
+        color: $pink;
+        scale: 1.1;
+
+        @include mobileX {
+            scale: unset;
+        }
+    }
+}
+
+.form__file-upload{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 10px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.form__file-upload__ok{
+    display: grid;
+    gap: 10px;
+
+    span{
+        color: $green;
+    }
+
+    button{
+        border: 2px solid $diluted-white;
+        border-radius: 10px;
+        line-height: 30px;
+        padding: 5px;
+        transition: 0.2s ease-in;
+
+        &:hover{
+            background-color: $green;
+        }
+    }
+}
+
+.form__file-upload-inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .form__file-upload-inputfile + label {
+    border: 2px solid $diluted-white;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.2s ease-in;
+  }
+  
+  .form__file-upload-inputfile:focus + label,
+  .form__file-upload-inputfile + label:hover {
+    background-color: $diluted-white;
+  }

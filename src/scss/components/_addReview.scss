@@ -1,0 +1,11 @@
+@use './../base/vars' as*;
+
+.add-review{
+    padding: 10px 0;
+}
+
+.add-review__form{
+    border-radius: 5px;
+    border: 2px solid $diluted-white;
+    height: 600px;
+}

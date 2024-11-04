@@ -1,0 +1,57 @@
+@use './../base/mixine' as*;
+@use '../base/mixine' as*;
+
+.nav {
+    padding: 20px 0;
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    width: 40px;
+}
+
+.nav__list {
+    font-size: 1.4rem;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    gap: 30px;
+
+    @include tablet{
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &--active{
+        position: fixed;
+        max-width: 320px;
+        width: 100%;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+
+        opacity: 1;
+        pointer-events: all;
+        background-color: #917f7f;
+        z-index: 10;
+    }
+}
+
+
+.nav__user {
+    width: 40px;
+
+    @include tablet{
+        display: none;
+    }
+}

@@ -1,0 +1,19 @@
+@use './base/reset';
+@use './base/base';
+@use './base/vars';
+@use './base/mixine';
+
+@use './components/navigation';
+@use './blocks/search';
+@use './components/footer';
+@use './components/home';
+@use './blocks/custom-react-calendar';
+@use './components/myReview';
+    @use './blocks/reveiw-card';
+@use './components/addReview';
+    @use './blocks/form';
+ 
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+

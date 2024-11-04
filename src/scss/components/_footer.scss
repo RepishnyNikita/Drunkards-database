@@ -1,0 +1,15 @@
+@use './../base/vars' as*;
+
+.footer{
+    padding: 10px 0;
+    align-items: end;
+    display: flex;
+    margin-top: auto;
+    height: 30px;
+    font-size: 14px;
+
+    p{
+        text-align: center;
+        color: $diluted-white;
+    }
+}
